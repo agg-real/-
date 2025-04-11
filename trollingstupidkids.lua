@@ -10,6 +10,7 @@ local HttpService = game:GetService("HttpService")
 local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub", HidePremium = false, SaveConfig = true})
 local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://89991291117147"})
 local ex = false
+local co = false
 Tab:AddButton({
 	Name = "Tunr on Infinite Yield",
 	Callback = function()
@@ -23,10 +24,17 @@ OrionLib:MakeNotification({
   	end    
 })
 local ez =Tab:AddToggle({
-    Name = "Включить функцию",
+    Name = "Телепорт к леснице",
     Default = ex,
     Callback = function(value)
         ex = value
+    end
+})
+local cocx =Tab:AddToggle({
+    Name = "Включить крутилку",
+    Default = co,
+    Callback = function(value)
+        co = value
     end
 })
 
@@ -45,6 +53,24 @@ part.Size = Vector3.new(math.random(0,4),12,0.55)
 end
                 end
             end
+if co then
+local Speed = 1000 -- How fast you want to spin
+local LocalPlayer = game.Players.LocalPlayer
+local Char = workspace:FindFirstChild(LocalPlayer.Name)
+local RootPart = Char:WaitForChild("HumanoidRootPart")
+local Torque = Instance.new("Torque")
+Torque.Enabled = true
+Torque.Torque = Vector3.new(0,Speed,0)
+Torque.Parent = RootPart
+local Attachment = Instance.new("Attachment")
+Attachment.Parent = RootPart
+Attachment.Position = RootPart.Position
+Torque.Attachment0 = Attachment
+			elseif co == false then
+local RootPart = Char:WaitForChild("HumanoidRootPart")
+RootPart:FindFirstChild("Attachment"):Destroy()
+RootPart:FindFirstChild("Torque"):Destroy()
+			end
         end
 end)
 
