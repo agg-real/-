@@ -65,7 +65,7 @@ local Attachment = Instance.new("Attachment")
 Attachment.Parent = RootPart
 Attachment.Position = RootPart.Position
 Torque.Attachment0 = Attachment
-			if co == false then
+			if not co and RootPart:FindFirstChild("Attachment") and RootPart:FindFirstChild("Torque") then
 RootPart:FindFirstChild("Attachment"):Destroy()
 RootPart:FindFirstChild("Torque"):Destroy()
 			end
