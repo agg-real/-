@@ -55,9 +55,8 @@ end
             end
 if co then
 local Speed = 1000 -- How fast you want to spin
-local LocalPlayer = game.Players.LocalPlayer
-local Char = workspace:FindFirstChild(LocalPlayer.Name)
-local RootPart = Char:WaitForChild("HumanoidRootPart")
+ local chr = game.Players.LocalPlayer.Character
+local RootPart = chr:WaitForChild("HumanoidRootPart")
 local Torque = Instance.new("Torque")
 Torque.Enabled = true
 Torque.Torque = Vector3.new(0,Speed,0)
@@ -67,7 +66,6 @@ Attachment.Parent = RootPart
 Attachment.Position = RootPart.Position
 Torque.Attachment0 = Attachment
 			elseif co == false then
-local RootPart = Char:WaitForChild("HumanoidRootPart")
 RootPart:FindFirstChild("Attachment"):Destroy()
 RootPart:FindFirstChild("Torque"):Destroy()
 			end
