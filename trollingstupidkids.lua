@@ -18,5 +18,5 @@ end
 
 local bambam = Instance.new("BodyThrust")
 bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
-bambam.Force = Vector3.new(power,0,900000)
+bambam.Force = Vector3.new(power,0,9990)
 bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
