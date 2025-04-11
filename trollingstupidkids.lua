@@ -1,4 +1,5 @@
 print("funny")
+local xyi = true
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -11,7 +12,6 @@ local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub", HidePremium =
 local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://89991291117147"})
 local ex = false
 local co = false
-local xyi = true
 Tab:AddButton({
 	Name = "Tunr on Infinite Yield",
 	Callback = function()
