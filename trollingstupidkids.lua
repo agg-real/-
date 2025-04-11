@@ -31,6 +31,8 @@ part.Size = Vector3.new(5,12,1.45)
   end
 end
             end
+        end
+    end
 end)
 
 OrionLib:Init()
