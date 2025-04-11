@@ -24,6 +24,7 @@ task.spawn(function()
 if ex then
  local chr = game.Players.LocalPlayer.Character
 local stairs = workspace:FindFirstChild("Stairs")
+if chr:WaitForChild("HumanoidRootPart") then
 for _,part in pairs(stairs:GetChildren()) do
 if part:IsA("BasePart") then
 part.CanCollide = false
@@ -31,6 +32,7 @@ part.CFrame = chr:WaitForChild("HumanoidRootPart").CFrame
 part.Size = Vector3.new(math.random(0,4),12,0.55)
   end
 end
+                end
             end
         end
 end)
