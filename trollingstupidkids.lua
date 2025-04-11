@@ -58,18 +58,18 @@ if co and xyi == true then
 xyi = false
 local Speed = 1000 -- How fast you want to spin
  local chr = game.Players.LocalPlayer.Character
-local RootPart = chr:FindFirstChild("HumanoidRootPart")
-local Torque = Instance.new("Torque")
+local RootPart = chr:FindFirstChild('HumanoidRootPart')
+local Torque = Instance.new('Torque')
 Torque.Enabled = true
 Torque.Torque = Vector3.new(0,Speed,0)
 Torque.Parent = RootPart
-local Attachment = Instance.new("Attachment")
+local Attachment = Instance.new('Attachment')
 Attachment.Parent = RootPart
 Attachment.Position = RootPart.Position
 Torque.Attachment0 = Attachment
 			if co == false and xyi == false then
-RootPart:FindFirstChild("Attachment"):Destroy()
-RootPart:FindFirstChild("Torque"):Destroy()
+RootPart:FindFirstChild('Attachment'):Destroy()
+RootPart:FindFirstChild('Torque'):Destroy()
 xyi = true
 			end
 			end
