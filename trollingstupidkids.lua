@@ -65,10 +65,9 @@ local Attachment = Instance.new("Attachment")
 Attachment.Parent = RootPart
 Attachment.Position = RootPart.Position
 Torque.Attachment0 = Attachment
-			if not co and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Attachment") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Attachment") then
+			elseif co == false and RootPart:FindFirstChild("Attachment") and RootPart:FindFirstChild("Torque") then
 RootPart:FindFirstChild("Attachment"):Destroy()
 RootPart:FindFirstChild("Torque"):Destroy()
-			end
 			end
         end
 end)
