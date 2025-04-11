@@ -10,7 +10,7 @@ local HttpService = game:GetService("HttpService")
 local Window = OrionLib:MakeWindow({Name = "Skill issue obby hub", HidePremium = false, SaveConfig = true})
 local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://89991291117147"})
 local flightEnabled = false
-Tab:AddToggle({
+local ez =Tab:AddToggle({
     Name = "Включить функцию",
     Default = flightEnabled,
     Callback = function(value)
