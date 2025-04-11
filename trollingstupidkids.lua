@@ -11,6 +11,7 @@ local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub", HidePremium =
 local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://89991291117147"})
 local ex = false
 local co = false
+local xyi = true
 Tab:AddButton({
 	Name = "Tunr on Infinite Yield",
 	Callback = function()
@@ -53,7 +54,8 @@ part.Size = Vector3.new(math.random(0,4),12,0.55)
 end
                 end
             end
-if co then
+if co and xyi == true then
+xyi = false
 local Speed = 1000 -- How fast you want to spin
  local chr = game.Players.LocalPlayer.Character
 local RootPart = chr:FindFirstChild("HumanoidRootPart")
@@ -65,9 +67,10 @@ local Attachment = Instance.new("Attachment")
 Attachment.Parent = RootPart
 Attachment.Position = RootPart.Position
 Torque.Attachment0 = Attachment
-			if co == false and RootPart:FindFirstChild("Attachment") and RootPart:FindFirstChild("Torque") then
+			if co == false and xyi == false then
 RootPart:FindFirstChild("Attachment"):Destroy()
 RootPart:FindFirstChild("Torque"):Destroy()
+xyi = true
 			end
 			end
         end
