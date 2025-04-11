@@ -7,20 +7,21 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 
-local Window = OrionLib:MakeWindow({Name = "Skill issue obby hub", HidePremium = false, SaveConfig = true})
+local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub", HidePremium = false, SaveConfig = true})
 local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://89991291117147"})
-local flightEnabled = false
+local ex = false
+
 local ez =Tab:AddToggle({
     Name = "Включить функцию",
-    Default = flightEnabled,
+    Default = ex,
     Callback = function(value)
-        flightEnabled = value
+        ex = value
     end
 })
 
 task.spawn(function()
     while task.wait() do
-if flightEnabled then
+if ex then
  local chr = game.Players.LocalPlayer.Character
 local stairs = workspace:FindFirstChild("Stairs")
 for _,part in pairs(stairs:GetChildren()) do
