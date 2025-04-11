@@ -47,7 +47,7 @@ if chr:WaitForChild("HumanoidRootPart") then
 for _,part in pairs(stairs:GetChildren()) do
 if part:IsA("BasePart") then
 part.CanCollide = false
-part.CFrame = chr:WaitForChild("HumanoidRootPart").CFrame
+part.CFrame = chr:FindFirstChild("HumanoidRootPart").CFrame
 part.Size = Vector3.new(math.random(0,4),12,0.55)
   end
 end
@@ -56,7 +56,7 @@ end
 if co then
 local Speed = 1000 -- How fast you want to spin
  local chr = game.Players.LocalPlayer.Character
-local RootPart = chr:WaitForChild("HumanoidRootPart")
+local RootPart = chr:FindFirstChild("HumanoidRootPart")
 local Torque = Instance.new("Torque")
 Torque.Enabled = true
 Torque.Torque = Vector3.new(0,Speed,0)
