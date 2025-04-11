@@ -31,13 +31,7 @@ local ez =Tab:AddToggle({
         ex = value
     end
 })
-local cocx =Tab:AddToggle({
-    Name = "Включить крутилку",
-    Default = co,
-    Callback = function(value)
-        co = value
-    end
-})
+
 
 task.spawn(function()
     while task.wait() do
@@ -54,25 +48,6 @@ part.Size = Vector3.new(math.random(0,4),12,0.55)
 end
                 end
             end
-if co and xyi then
-xyi = false
-local Speed = 100000 -- How fast you want to spin
- local chr = game.Players.LocalPlayer.Character
-local RootPart = chr:FindFirstChild('HumanoidRootPart')
-local Torque = Instance.new('Torque')
-Torque.Enabled = true
-Torque.Torque = Vector3.new(0,Speed,0)
-Torque.Parent = RootPart
-local Attachment = Instance.new('Attachment')
-Attachment.Parent = RootPart
-Attachment.Position = RootPart.Position
-Torque.Attachment0 = Attachment
-			if not co and not xyi then
-xyi = true
-RootPart:FindFirstChild('Attachment'):Destroy()
-RootPart:FindFirstChild('Torque'):Destroy()
-			end
-			end
         end
 end)
 
