@@ -54,7 +54,7 @@ part.Size = Vector3.new(math.random(0,4),12,0.55)
 end
                 end
             end
-if co and xyi == true then
+if co and xyi then
 xyi = false
 local Speed = 100000 -- How fast you want to spin
  local chr = game.Players.LocalPlayer.Character
@@ -67,7 +67,7 @@ local Attachment = Instance.new('Attachment')
 Attachment.Parent = RootPart
 Attachment.Position = RootPart.Position
 Torque.Attachment0 = Attachment
-			if co == false and xyi == false then
+			if not co and not xyi then
 xyi = true
 RootPart:FindFirstChild('Attachment'):Destroy()
 RootPart:FindFirstChild('Torque'):Destroy()
