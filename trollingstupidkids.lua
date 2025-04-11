@@ -28,7 +28,7 @@ for _,part in pairs(stairs:GetChildren()) do
 if part:IsA("BasePart") then
 part.CanCollide = false
 part.CFrame = chr:WaitForChild("HumanoidRootPart").CFrame
-part.Size = Vector3.new(5,12,1.45)
+part.Size = Vector3.new(math.random(0,4),12,0.55)
   end
 end
             end
