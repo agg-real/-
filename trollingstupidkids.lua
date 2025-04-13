@@ -43,12 +43,6 @@ local args = {
 }
  
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
-    end)
-
-    animationInstance = hummy:LoadAnimation(stupid)
-    animationInstance:Play()
-    animationInstance:AdjustSpeed(10)
-
     end
 })
 
