@@ -13,6 +13,7 @@ local ex = false
 local co = false
 local used = true
 local sexxx = false
+local first = true
 Tab:AddButton({
 	Name = "Tunr on Infinite Yield",
 	Callback = function()
@@ -55,14 +56,29 @@ part.Size = Vector3.new(math.random(0,4),12,0.55)
 end
                 end
             end
-if sexxx and used == false then
+if sexxx and used == false and first == true then
 local stupid = Instance.new('Animation')
 stupid.AnimationId = 'rbxassetid://148840371'
 hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
 local notfunny = hummy:LoadAnimation(stupid)
 notfunny:Play()
 notfunny:AdjustSpeed(10)
-			elseif sexxx == false and used then
+			elseif sexxx == false and used == true and first == false then
+notfunny:Stop()
+        end
+		end
+end)
+task.spawn(function()
+    while task.wait() do
+if sexxx and used == false and first == true then
+first = false
+local stupid = Instance.new('Animation')
+stupid.AnimationId = 'rbxassetid://148840371'
+hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
+local notfunny = hummy:LoadAnimation(stupid)
+notfunny:Play()
+notfunny:AdjustSpeed(10)
+			elseif sexxx == false and used == true and first == false then
 notfunny:Stop()
         end
 		end
