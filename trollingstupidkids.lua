@@ -1,4 +1,3 @@
-print("funny")
 local xyi = true
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 local UserInputService = game:GetService("UserInputService")
@@ -12,6 +11,8 @@ local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub", HidePremium =
 local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://89991291117147"})
 local ex = false
 local co = false
+local used = true
+local sexxx = false
 Tab:AddButton({
 	Name = "Tunr on Infinite Yield",
 	Callback = function()
@@ -31,7 +32,13 @@ local ez =Tab:AddToggle({
         ex = value
     end
 })
-
+local bang =Tab:AddToggle({
+    Name = "Анимация bang",
+    Default = sexxx,
+    Callback = function(value)
+        sexxx = value
+    end
+})
 
 task.spawn(function()
     while task.wait() do
@@ -48,7 +55,23 @@ part.Size = Vector3.new(math.random(0,4),12,0.55)
 end
                 end
             end
+if sexxx and used == false then
+local stupid = Instance.new('Animation')
+stupid.AnimationId = 'rbxassetid://148840371'
+hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
+local notfunny = hummy:LoadAnimation(stupid)
+notfunny:Play()
+notfunny:AdjustSpeed(10)
+			elseif sexxx == false and used then
+notfunny:Stop()
         end
+		end
 end)
+OrionLib:MakeNotification({
+	Name = "Made by gugugagas team",
+	Content = "Working!",
+	Image = "rbxassetid://0",
+	Time = 5
+})
 
 OrionLib:Init()
