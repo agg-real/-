@@ -36,13 +36,13 @@ local ez =Tab:AddToggle({
 local bang =Tab:AddButton({
     Name = "Анимация bang",
     Callback = function(value)
-local args = {
+--[[local args = {
     [1] = "robloxs original chat script roblox actually made it i just got it from rspy" .. --first text
         " robloxs og chat script", --second text
-    [2] = "All"
+    [2] = "All",
 }
  
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))--]]
     end
 })
 
