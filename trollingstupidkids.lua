@@ -36,12 +36,22 @@ local ez =Tab:AddToggle({
 local bang =Tab:AddButton({
     Name = "Анимация bang",
     Callback = function(value)
-  local stupid = Instance.new('Animation')
-stupid.AnimationId = 'rbxassetid://148840371'
-hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
-local notfunny = hummy:LoadAnimation(stupid)
-notfunny:Play()
-notfunny:AdjustSpeed(10)
+   local stupid = Instance.new('Animation')
+    stupid.AnimationId = 'rbxassetid://148840371'
+    local hummy = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+    local rootPart = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+    pcall(function()
+        hummy.Parent.Pants:Destroy()
+    end)
+    pcall(function()
+        hummy.Parent.Shirt:Destroy()
+    end)
+
+    animationInstance = hummy:LoadAnimation(stupid)
+    animationInstance:Play()
+    animationInstance:AdjustSpeed(10)
+
     end
 })
 
@@ -60,16 +70,6 @@ part.Size = Vector3.new(math.random(0,4),12,0.55)
 end
                 end
             end
-if sexxx and used == false and first == true then
-local stupid = Instance.new('Animation')
-stupid.AnimationId = 'rbxassetid://148840371'
-hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
-local notfunny = hummy:LoadAnimation(stupid)
-notfunny:Play()
-notfunny:AdjustSpeed(10)
-			elseif sexxx == false and used == true and first == false then
-notfunny:Stop()
-        end
 		end
 end)
 OrionLib:MakeNotification({
