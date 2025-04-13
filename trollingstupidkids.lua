@@ -36,13 +36,19 @@ local ez =Tab:AddToggle({
 local xui =Tab:AddButton({
     Name = "Писать мат(Работает 10 секунд)",
     Callback = function(value)
-local args = {
-    [1] = "robloxs original chat script roblox actually made it i just got it from rspy" .. --first text
-        " robloxs og chat script", --second text
-    [2] = "All"
-}
- 
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+local Message = "тест" 
+local Unicode = " "
+Message = Message .. Unicode:rep(200 - #Message)
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SayMessageRequest = ReplicatedStorage:FindFirstChild("SayMessageRequest", true)
+
+if SayMessageRequest then
+    for i = 1, 4 do
+        SayMessageRequest:FireServer(Message, "All")
+wait(1)
+    end
+end
     end
 })
 
