@@ -15,10 +15,10 @@ local used = true
 local sexxx = false
 local first = true
 Tab:AddButton({
-	Name = "Tunr on Infinite Yield",
+	Name = "Включить Infinite Yield",
 	Callback = function()
 OrionLib:MakeNotification({
-	Name = "Fire inf yield",
+	Name = "Реквариваем Infinite Yield",
 	Content = "Working!",
 	Image = "rbxassetid://0",
 	Time = 5
@@ -33,16 +33,16 @@ local ez =Tab:AddToggle({
         ex = value
     end
 })
-local bang =Tab:AddButton({
-    Name = "Анимация bang",
+local xui =Tab:AddButton({
+    Name = "Писать мат(Работает 10 секунд)",
     Callback = function(value)
---[[local args = {
+local args = {
     [1] = "robloxs original chat script roblox actually made it i just got it from rspy" .. --first text
         " robloxs og chat script", --second text
-    [2] = "All",
+    [2] = "All"
 }
  
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))--]]
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
     end
 })
 
