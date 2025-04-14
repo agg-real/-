@@ -36,7 +36,7 @@ local ez =Tab:AddToggle({
 local xui =Tab:AddButton({
     Name = "Писать мат(Работает 10 секунд)",
     Callback = function(value)
-local Message = "тест" 
+local Message = "ez" 
 local Unicode = " "
 Message = Message .. Unicode:rep(200 - #Message)
 
@@ -44,9 +44,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local SayMessageRequest = ReplicatedStorage:FindFirstChild("SayMessageRequest", true)
 
 if SayMessageRequest then
-    for i = 1, 4 do
+    for i = 0, 1 do
         SayMessageRequest:FireServer(Message, "All")
-wait(1)
     end
 end
     end
