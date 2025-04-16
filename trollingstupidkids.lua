@@ -68,11 +68,14 @@ end
             end
 		end
 end)
+task.spawn(function()
+task.wait(5)
 OrionLib:MakeNotification({
 	Name = "Made by gugugagas team",
 	Content = "Working!",
 	Image = "rbxassetid://0",
 	Time = 5
 })
+	end)
 
 OrionLib:Init()
