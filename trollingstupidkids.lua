@@ -8,7 +8,7 @@ local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 
 local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub (Beta)", HidePremium = false, SaveConfig = true})
-local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://89991291117147"})
+local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://90323304631053"})
 local ex = false
 local co = false
 local used = true
@@ -26,7 +26,7 @@ Tab:AddButton({
 OrionLib:MakeNotification({
 	Name = "Реквариваем Infinite Yield",
 	Content = "Working!",
-	Image = "rbxassetid://0",
+	Image = "rbxassetid://18579698048",
 	Time = 5
 })
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
