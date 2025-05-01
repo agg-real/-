@@ -51,7 +51,7 @@ for _,part in pairs(stairs:GetChildren()) do
 if part:IsA("BasePart") then
 part.CanCollide = false
 part.CFrame = chr:FindFirstChild("HumanoidRootPart").CFrame
-game.TweenService:Create(part,TweenInfo.new(0.05),{Size = Vector3.new(math.random(1,4),12,0.55)}):Play()
+part.Size = Vector3.new(math.random(1,4),12,0.55)
   end
 end
                 end
