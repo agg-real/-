@@ -15,7 +15,7 @@ local used = true
 local sexxx = false
 local first = true
 Tab:AddButton({
-	Name = "Работает только для Вредноблог обби! ",
+	Name = "Работает только для Вредноблог обби! (Игра для отсталых) ",
 	Callback = function()
   	end    
 })
