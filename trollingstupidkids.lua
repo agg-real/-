@@ -7,13 +7,19 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 
-local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub", HidePremium = false, SaveConfig = true})
+local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub (Beta)", HidePremium = false, SaveConfig = true})
 local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://89991291117147"})
 local ex = false
 local co = false
 local used = true
 local sexxx = false
 local first = true
+Tab:AddButton({
+	Name = "Работает только для Вредноблог обби! ",
+	Callback = function()
+  	end    
+})
+
 Tab:AddButton({
 	Name = "Включить Infinite Yield",
 	Callback = function()
@@ -33,23 +39,7 @@ local ez =Tab:AddToggle({
         ex = value
     end
 })
-local xui =Tab:AddButton({
-    Name = "Писать мат(Работает 10 секунд)",
-    Callback = function(value)
-local Message = "ez" 
-local Unicode = " "
-Message = Message .. Unicode:rep(200 - #Message)
 
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local SayMessageRequest = ReplicatedStorage:FindFirstChild("SayMessageRequest", true)
-
-if SayMessageRequest then
-    for i = 0, 1 do
-        SayMessageRequest:FireServer(Message, "All")
-    end
-end
-    end
-})
 
 task.spawn(function()
     while task.wait() do
@@ -61,7 +51,7 @@ for _,part in pairs(stairs:GetChildren()) do
 if part:IsA("BasePart") then
 part.CanCollide = false
 part.CFrame = chr:FindFirstChild("HumanoidRootPart").CFrame
-part.Size = Vector3.new(math.random(0,4),12,0.55)
+game.TweenService:Create(part,Tweeninfo.new(0.05),{Size = Vector3.new(math.random(1,4),12,0.55)}):Play()
   end
 end
                 end
@@ -69,11 +59,11 @@ end
 		end
 end)
 task.spawn(function()
-task.wait(5)
+task.wait(2)
 OrionLib:MakeNotification({
 	Name = "Made by gugugagas team",
 	Content = "Working!",
-	Image = "rbxassetid://0",
+	Image = "rbxassetid://18641615063",
 	Time = 5
 })
 	end)
