@@ -1,5 +1,5 @@
 local xyi = true
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/KrutoiC4elovek/NEW-LIB/refs/heads/main/NEW-LIB'))()
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -7,40 +7,60 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 
-local Window = OrionLib:MakeWindow({Name = "Skill-issue obby hub", HidePremium = false, SaveConfig = true})
-local Tab = Window:MakeTab({Name = "Главная", Icon = "rbxassetid://90323304631053"})
+
+local Window = Rayfield:CreateWindow({
+   Name = "Rayfield Example Window",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Created by Gugugaga team",
+   LoadingSubtitle = "Skill-issue obby hub",
+   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   ToggleUIKeybind = "=", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+	},
+   Discord = {
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "https://discord.gg/YqMJRHK5Mg", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Gugugaga team",
+      Subtitle = "Key System",
+      Note = "Join to our discord server!", -- Use this to tell the user how to get a key
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"GUGUGAGA9572645FHKRT376528"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+local Tab = Window:CreateTab("Tab Example", 0) -- Title, Image
+
+
+local Button = Tab:CreateButton({
+   Name = "Require infinite yield",
+   Callback = function()
+Rayfield:Notify({
+   Title = "Successfully",
+   Content = "   ",
+   Duration = 5,
+   Image = 4483362458,
+})
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+   end,
+})
 local ex = false
 local co = false
 local used = true
 local sexxx = false
 local first = true
-Tab:AddButton({
-	Name = "Работает только для Вредноблог обби! (Игра для отсталых) ",
-	Callback = function()
-  	end    
+local Toggle = Tab:CreateToggle({
+   Name = "Телепортировать лестницу к себе",
+   CurrentValue = false,
+   Flag = "xd", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+ex = Value
+   end,
 })
-
-Tab:AddButton({
-	Name = "Включить Infinite Yield",
-	Callback = function()
-OrionLib:MakeNotification({
-	Name = "Реквариваем Infinite Yield",
-	Content = "Working!",
-	Image = "rbxassetid://18579698048",
-	Time = 5
-})
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-  	end    
-})
-local ez =Tab:AddToggle({
-    Name = "Телепорт к леснице",
-    Default = ex,
-    Callback = function(value)
-        ex = value
-    end
-})
-
-
 task.spawn(function()
     while task.wait() do
 if ex then
@@ -60,12 +80,11 @@ end
 end)
 task.spawn(function()
 task.wait(2)
-OrionLib:MakeNotification({
-	Name = "Made by gugugagas team",
-	Content = "Working!",
-	Image = "rbxassetid://18641615063",
-	Time = 5
+Rayfield:Notify({
+   Title = "Join to Gugugaga team",
+   Content = "Join to Gugugaga team",
+   Duration = 2.5,
+   Image = 4483362458,
 })
 	end)
 
-OrionLib:Init()
