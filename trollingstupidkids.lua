@@ -11,13 +11,20 @@ local HttpService = game:GetService("HttpService")
 local Window = Rayfield:CreateWindow({
    Name = "Rayfield Example Window",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Created by Gugugaga team",
-   LoadingSubtitle = "Skill-issue obby hub",
+   LoadingTitle = "Skill-issue obby hub",
+   LoadingSubtitle = "Gugugaga team",
    Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
    ToggleUIKeybind = "=", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
-	},
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
    Discord = {
       Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
       Invite = "https://discord.gg/YqMJRHK5Mg", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
@@ -27,6 +34,7 @@ local Window = Rayfield:CreateWindow({
    KeySettings = {
       Title = "Gugugaga team",
       Subtitle = "Key System",
+FileName = "Key",
       Note = "Join to our discord server!", -- Use this to tell the user how to get a key
       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
