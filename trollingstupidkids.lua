@@ -95,4 +95,4 @@ Rayfield:Notify({
    Image = 4483362458,
 })
 	end)
-
+Rayfield:LoadConfiguration()
