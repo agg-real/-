@@ -19,11 +19,6 @@ local Window = Rayfield:CreateWindow({
 
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
-
-   ConfigurationSaving = {
-      Enabled = true,
-      FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Big Hub"
    },
    Discord = {
       Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
