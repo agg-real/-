@@ -1,4 +1,4 @@
-local xyi = true
+
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua'))()
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -25,7 +25,7 @@ local Window = Rayfield:CreateWindow({
       Invite = "https://discord.gg/YqMJRHK5Mg", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
-   KeySystem = false, -- Set this to true to use our key system
+  KeySystem = false, -- Set this to true to use our key system
    KeySettings = {
       Title = "Gugugaga team",
       Subtitle = "Key System",
@@ -49,7 +49,7 @@ Rayfield:Notify({
    Image = 4483362458,
 })
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
-   end,
+   end
 })
 local ex = false
 local co = false
@@ -62,7 +62,7 @@ local Toggle = Tab:CreateToggle({
    Flag = "xd", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
 ex = Value
-   end,
+   end
 })
 task.spawn(function()
     while task.wait() do
